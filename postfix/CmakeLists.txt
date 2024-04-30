@@ -1,0 +1,11 @@
+#Библиотека
+cmake_minimum_required(VERSION 2.8)
+
+project(postfix)
+
+
+file(GLOB CPP "*.CPP")
+file(GLOB H "*.h")
+
+add_library(${PROJECT_NAME} STATIC  ${CPP})
+target_include_directories(postfix PUBLIC ${H})
