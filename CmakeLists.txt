@@ -1,0 +1,17 @@
+#Passkal--
+cmake_minimum_required(VERSION 2.8)
+
+project(Paskal--)
+
+file(GLOB CPP "*.CPP" "lib/*.CPP")
+file(GLOB H  "lib/*.H")
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/lib)
+
+
+add_executable(${PROJECT_NAME} ${H} ${CPP})
+
+
+set(postfix postfix)
+add_subdirectory(postfix)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/postfix)
+target_link_libraries(${PROJECT_NAME} postfix)
